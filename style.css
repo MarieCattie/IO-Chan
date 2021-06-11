@@ -5,7 +5,9 @@
 	box-sizing: border-box;
 	font-size: 14px;
 }
-
+html {
+	scroll-behavior: smooth;
+}
 body {
 	width: 100%;
 	display: flex;
@@ -71,9 +73,26 @@ span {
 	max-width: 1400px; /*стандартные значения для лендинга*/
 	min-width: 320px;
 	background-color: rgba(29, 27, 122, 0.8);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
+.block {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.2);
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8),
+				inset -10px -10px 15px rgba(5, 5, 80, 0.4),
+				inset 5px 0 15px rgba(5, 5, 80, 0.4);
+	padding-bottom: 30px;
+}
 
+.content span {
+	width: 60%;;
+}
 
 .header-content {
 	margin: 0 auto;
@@ -112,7 +131,7 @@ span {
 	text-shadow: 0 0 10px #4AC2FE;
 }
 
-@-webkit-keyframes svetyash-chiysya {
+@keyframes svetyash-chiysya {
   0% {
   	background-image: url(img/logo4.png);
   	background-repeat: no-repeat;
@@ -270,6 +289,16 @@ main {
   	background-size: cover;
   	background-position: center;
 }
+.decorated {
+	text-decoration: none;
+	font-size: 18px;
+	color: #CAF5FF;
+	text-shadow: 0 0 10px #4AC2FE;
+}
+.decorated:hover {
+	color: #ffcaed;
+	text-shadow: 0 0 10px #fe4ae6;
+}
 /*Персонажи*/
 .characters {
 	width: 100%;
@@ -277,6 +306,7 @@ main {
 	flex-direction: column;
 }
 .characters-block {
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	margin-top: 60px;
@@ -285,7 +315,7 @@ main {
 	width: 30%;
 	height: 750px;
 	border-radius: 25px;
-	display: flex;
+	/*display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
@@ -293,7 +323,7 @@ main {
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8),
 				inset -10px -10px 15px rgba(5, 5, 80, 0.4),
 				inset 5px 0 15px rgba(5, 5, 80, 0.4);
-	padding-bottom: 30px;
+	padding-bottom: 30px;*/
 
 }
 
@@ -489,8 +519,10 @@ main {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
-.games-block {
+
+.mini-block {
 	margin-top: 60px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -500,10 +532,10 @@ main {
 	border-radius: 25px;
 	padding: 30px;
 	margin-bottom: 60px;
-	background-color: rgba(255, 255, 255, 0.2);
+	/*background-color: rgba(255, 255, 255, 0.2);
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8),
 				inset -10px -10px 15px rgba(5, 5, 80, 0.4),
-				inset 5px 0 15px rgba(5, 5, 80, 0.4);
+				inset 5px 0 15px rgba(5, 5, 80, 0.4);*/
 }
 
 .game-img {
@@ -545,3 +577,113 @@ main {
 				0px 5px 20px #00AAFF;
 	font-size: 18px;
 }
+
+/*Кнопка наверх*/
+.up-btn {
+	position: fixed;
+	bottom: 75px;
+	right: 20px;
+	cursor: pointer;
+	width: 64px;
+	height: 64px;
+	font-size: 36px;
+	font-weight: bold;
+	vertical-align: middle;
+	text-align: center;
+	border: 3px solid;
+	border-radius: 50%;
+	border-color: rgba(255, 231, 214, 0.6);
+	background-color: rgba(255, 231, 214, 0.1);;
+	color: rgba(255, 231, 214, 0.8);
+	box-shadow: 
+	0 0 2px 1px #EB0280;
+	text-shadow: 
+	1px -1px 3px #EB0280,
+	-1px 0 3px #EB0280;
+	display: none;
+}
+.up-btn:hover {
+	border-color: rgba(255, 231, 214, 1);
+	color: rgba(255, 231, 214, 1);
+	box-shadow: 
+	0 0 20px 5px #EB0280;
+	text-shadow: 5px 5px 8px #EB0280,
+	5px -1px 8px #EB0280,
+	-5px -5px 8px #EB0280,
+	-5px 0 8px #EB0280;
+	transition: 0.3s;
+}
+.visible {
+	display: inline-block;
+}
+/*Галерея*/
+.gallery-block {
+	width: 100%;
+	margin-top: 60px;
+	display: grid;
+	grid-template-columns: repeat(4, 25%);
+	grid-template-rows: repeat(4, auto);
+	row-gap: 30px;
+	column-gap: 30px;
+}
+.image {
+	
+	height: auto;
+	margin-right: 30px;
+	overflow: hidden;
+}
+.image img {
+	padding: 20px;
+	max-width: 300px;
+	width: auto;
+
+}
+.btn {
+	padding: 15px 60px;
+	display: flex;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.349);
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8),
+				inset -10px -10px 15px rgba(5, 5, 80, 0.4),
+				inset 5px 0 15px rgba(5, 5, 80, 0.4);
+	cursor: pointer;
+	font-size: 14px;
+	text-decoration: none;
+	color: #CAF5FF;
+	text-shadow: 0 0 10px #4AC2FE;
+}
+.btn:hover, .image img:hover {
+	box-shadow: 
+				inset -3px -3px 15px rgba(235, 2, 128, 0.6),
+				inset 3px 0 15px rgba(235, 2, 128, 0.6),
+				0 0 5px 2px #EB0280,
+				0 0 5px 2px #EB0280;
+}
+.cover {
+	display: block;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.openImg {
+	display: none;	
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bloock {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
